@@ -1,0 +1,202 @@
+/* ============================================
+   Cinematic Entrance Animations
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes liftIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glassIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(20px);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomSlow {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+/* ============================================
+   Class-based Animations
+   ============================================ */
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-lift-in {
+  animation: liftIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-glass-in {
+  animation: glassIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ============================================
+   Stagger Effects (for grids/lists)
+   ============================================ */
+
+.stagger-container > * {
+  opacity: 0;
+  animation: slideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.stagger-container > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-container > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-container > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-container > *:nth-child(4) { animation-delay: 300ms; }
+.stagger-container > *:nth-child(5) { animation-delay: 400ms; }
+.stagger-container > *:nth-child(6) { animation-delay: 500ms; }
+
+/* ============================================
+   Hover Effects - Premium
+   ============================================ */
+
+.hover-lift {
+  transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow {
+  transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.hover-scale {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-scale-subtle {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-scale-subtle:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   Loading States
+   ============================================ */
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================
+   Blur & Backdrop Effects
+   ============================================ */
+
+.blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.blur-lg {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ============================================
+   Opacity Transitions
+   ============================================ */
+
+.opacity-transition {
+  transition: opacity 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.opacity-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.opacity-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
